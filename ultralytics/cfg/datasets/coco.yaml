@@ -1,0 +1,4 @@
+train: /home/qinxijia/car_smart/BITVehicle/train/images
+val: /home/qinxijia/car_smart/BITVehicle/val/images
+nc: 6
+names: ['Truck', 'SUV', 'Sedan', 'Microbus', 'Minivan', 'Bus']
