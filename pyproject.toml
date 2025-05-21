@@ -27,7 +27,6 @@ dependencies = [
   "lvis>=0.5.3"
 ]
 [tool.uv]
-required-version = "3.8"  
 version = "0.7.6"        
 [tool.setuptools.packages.find]
 where = ["src"]
