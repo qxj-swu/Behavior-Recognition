@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Behavior-Recognition"
+version = "0.1.0"
+description = "Human behavior recognition system based on YOLOv8 and ultralytics"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "your.email@example.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+# 项目依赖
+dependencies = [
+    "torch",
+    "torchvision",
+    "ultralytics",
+    "opencv-python",
+    "matplotlib",
+    "Pillow",
+    "numpy",
+    "pycocotools>=2.0.6",
+    "lvis>=0.5.3",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v --cov=src"
+testpaths = ["tests"]
+
+[tool.uv]
+# uv 配置，用于自动安装和管理项目依赖
+python = "3.8"
