@@ -3,22 +3,20 @@ requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Behavior-Recognition"
+name = "behavior-recognition"
 version = "0.1.0"
 description = "Human behavior recognition system based on YOLOv8 and ultralytics"
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = "MIT"  # 使用SPDX字符串
 authors = [
     { name = "Your Name", email = "your.email@example.com" },
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
-# 项目依赖
 dependencies = [
     "torch",
     "torchvision",
@@ -31,10 +29,10 @@ dependencies = [
     "lvis>=0.5.3",
 ]
 
-[tool.pytest.ini_options]
-addopts = "-v --cov=src"
-testpaths = ["tests"]
-
 [tool.uv]
-# uv 配置，用于自动安装和管理项目依赖
-python = "3.8"
+required-version = "3.8"  # 正确的uv配置字段
+
+[tool.setuptools.packages.find]
+where = ["src"]  # 采用src布局时启用
+# 或直接指定包名：
+# packages = ["behavior_recognition"]
