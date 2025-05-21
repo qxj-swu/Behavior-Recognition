@@ -35,7 +35,8 @@
 │               ├── best.pt # 训练生成的最佳权重
 │               └── last.pt # 最后一次的权重
 ├── show.py        # GUI 应用主程序
-└── README.md           # 本文件
+├── README.md           # 本文件
+└── requirements.txt    # Python 依赖项
 ```
 
 ## 安装与设置
@@ -44,14 +45,29 @@
 
 *   Python 3.8+
 *   pip
-*   cuda和ultralytics环境
 
-### 2. 创建虚拟环境
+### 2. 克隆仓库 
+
+```bash
+git clone <your-repository-url>
+cd <repository-name>
+```
+
+### 3. 创建虚拟环境
 
 ```bash
 python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate    # Windows
 ```
-### 3. 下载预训练模型
+
+### 4. 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. 下载预训练模型
 
 *   **行为识别基础模型 (可选, 用于训练)**: 下载 `yolov8n.pt` (或其他大小的YOLOv8预训练模型，如 `yolov8s.pt` 等) 从 [YOLOv8 Releases](https://github.com/ultralytics/assets/releases)。将其放入 `model_data/` 目录 (如果计划从头训练或使用特定基础权重进行微调)。训练脚本中会指定模型路径。
 *   **人物检测模型 (GUI需要)**: 下载 `yolov8l.pt` 从 [YOLOv8 Releases](https://github.com/ultralytics/assets/releases)。将其放入 `model_data/` 目录。`show.py` 使用此模型进行通用人物检测。
@@ -111,3 +127,4 @@ yolo detect mode=train model=yolov8n.pt data=datasets/datasets.yaml
 ## 注意事项
 *   **GPU**: 为了获得较好的训练和推理速度，建议使用支持 CUDA 的 NVIDIA GPU。如果未检测到 GPU，程序将默认使用 CPU。
 *   **模型路径**: 请仔细检查所有脚本中引用的模型路径是否正确。
+*   **依赖版本**: `requirements.txt` 中列出的版本是建议版本，根据您的环境可能需要调整。 
