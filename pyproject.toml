@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [tool.uv]
-required-version = "3.8"  # 正确的uv配置字段
+required-version = "3.9"  # 正确的uv配置字段
 
 [tool.setuptools.packages.find]
 where = ["src"]  # 采用src布局时启用
